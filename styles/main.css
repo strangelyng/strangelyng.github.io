@@ -73,7 +73,7 @@ h6 + p {
 
 footer {
   background-color: #fcfcfc;
-  position: absolute;
+  position: relative;
   bottom: 0px;
   width: 100%;
   text-align: center;
