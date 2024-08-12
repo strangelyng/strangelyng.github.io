@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="author" author="Strangelyng" />
+    <meta name="author" content="Strangelyng" />
+    <link rel="stylesheet" href="styles/myreset.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <title>Page Title</title>
   </head>
@@ -20,15 +21,45 @@
     </nav>
 
     <main>
+
       <h2>This is a Heading</h2>
 
       <p>This is a paragraph.</p>
 
-      <img src="image.jpg" alt="There will be an image here." />
+      <a href="images/mermay-1440w.jpg" title="See the full-size image">
+        <img 
+          srcset="images/mermay-640w.jpg 640w, images/mermay-1080w.jpg 1080w, images/mermay-1440w.jpg 1440w"
+          sizes="(max-width: 760px) 640px,
+          (max-width: 1200px) 1080px,
+          1440px"
+          src="images/mermay-1440w.jpg"
+          alt="A mermaid-like creature in the depths of the ocean, reaching towards a peculiar light" />
+        </a>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada imperdiet fringilla. Vivamus consequat ligula et libero luctus, et dignissim orci tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ornare rutrum iaculis. Curabitur bibendum varius cursus. Cras interdum, velit at condimentum cursus, orci sapien ultrices nisl, eu blandit sem diam eu lectus. Mauris nec ultrices nisl, non ultrices lorem.
+      </p>
+
+      <p>
+        Praesent quis lacus nibh. Proin at dapibus elit. Quisque ultrices eleifend ante in maximus. Aenean at gravida tellus. Proin eget dolor viverra, consectetur dolor scelerisque, dignissim nulla. Maecenas pretium augue eros, nec suscipit nunc dignissim eget. Donec pulvinar laoreet risus eu dignissim. In ac bibendum dolor. Sed egestas elementum ex, volutpat efficitur felis condimentum quis.
+      </p>
+
+      <section>
+      <h2>Heading 2</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada imperdiet fringilla. Vivamus consequat ligula et libero luctus, et dignissim orci tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ornare rutrum iaculis. Curabitur bibendum varius cursus. Cras interdum, velit at condimentum cursus, orci sapien ultrices nisl, eu blandit sem diam eu lectus. Mauris nec ultrices nisl, non ultrices lorem.
+        </p>
+        
+        <h3>Heading 3</h3>
+
+        <p>
+          Praesent quis lacus nibh. Proin at dapibus elit. Quisque ultrices eleifend ante in maximus. Aenean at gravida tellus. Proin eget dolor viverra, consectetur dolor scelerisque, dignissim nulla. Maecenas pretium augue eros, nec suscipit nunc dignissim eget. Donec pulvinar laoreet risus eu dignissim. In ac bibendum dolor. Sed egestas elementum ex, volutpat efficitur felis condimentum quis.
+        </p>
+      </section>
     </main>
 
     <footer>
       <h3>Footer text</h3>
     </footer>
+
   </body>
 </html>

@@ -1,48 +1,107 @@
 html {
   margin: auto;
-  background-color: grey;
+  background-color: #f6f7f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  height: 100%;
 }
 
 body {
   max-width: 900px;
-  height: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0 auto;
-  background-color: white;
+  background-color: #ffffff;
   position: relative;
+  border-width: 0px 4px;
+  border-style: solid;
+  border-color: hotpink;
 }
 
 header {
-  background-color:lightgray;
+  background-color:#fcfcfc;
   padding: 20px;
   text-align: center;
+  border-bottom: 4px solid hotpink;
+}
+
+header h1 {
+  padding: 0.75em;
+  margin: 0;
 }
 
 nav a {
   display: block;
-  padding: 15px;
-  background-color: darkgray;
+  padding: 15px 30px;
+  background-color: #fcfcfc;
   text-align: center;
   float: right;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #86a7ea;
 }
 
 main {
   padding: 20px;
 }
 
+h2 {
+  margin: 30px 0px 5px;
+}
+
+main > h2:first-child {
+  margin-top: 5px;
+}
+
+h3, h4, h5, h6 {
+  margin: 20px 0px 0px;
+}
+
+p {
+  padding: 10px 0px;
+  text-indent: 1.5em;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  padding-top: 5px;
+}
+
 footer {
-  background-color: darkgray;
+  background-color: #fcfcfc;
   position: absolute;
   bottom: 0px;
   width: 100%;
   text-align: center;
+  border-top: 4px solid hotpink;
 }
 
 footer h3 {
-  padding: 20px;
+  margin: 0;
+  padding: 1.5em;
 }
 
-img {
-  display: block;
-  margin: 0 auto;
+/* @media query Dark Mode */
+/* ---------------------- */
+@media (prefers-color-scheme: dark) {
+  html { 
+    background-color: #292c34;
+  }
+  body {
+    background-color: #1d2127;
+    color: #dadada;
+  }
+  header, footer, nav a {
+    background-color: #191c20;
+  }
+  nav a {
+    color: #2156e2;
+  }
+  body, header, footer {
+    border-color: darkblue;
+  }
 }
