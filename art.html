@@ -14,7 +14,7 @@
     <meta name="msapplication-TileColor" content="#224679">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f7f8" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#292c34" />
-    <title>Strangelyng Home Page</title>
+    <title>Strangelyng Art Page</title>
     <script src="/scripts/main.js" defer></script>
   </head>
   <body>
@@ -28,18 +28,28 @@
 
     <div id="navbar">
       <nav>
-        <p>Home</p>
-        <a href="/art.html">Art</a>
+        <a href="/index.html">Home</a>
+        <p>Art</p>
         <a href="#">Link</a>
         <a href="#">Link</a>
       </nav>
     </div>
-    
+
     <main>
-      <h2>Welcome</h2>
 
-      <p>This is a paragraph welcoming you to the site.</p>
+      <h2>Art</h2>
 
+      <p>This is a paragraph.</p>
+
+      <a href="/images/mermay-1440w.jpg" title="Open the full-size image (1440 x 1080px)">
+        <img 
+          srcset="/images/mermay-640w.jpg 640w, /images/mermay-1080w.jpg 1080w, /images/mermay-1440w.jpg 1440w"
+          sizes="(max-width: 760px) 640px,
+          (max-width: 1200px) 1080px,
+          1440px"
+          src="/images/mermay-1440w.jpg"
+          alt="A mermaid-like creature in the depths of the ocean, reaching towards a peculiar light" />
+      </a>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada imperdiet fringilla. Vivamus consequat ligula et libero luctus, et dignissim orci tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris ornare rutrum iaculis. Curabitur bibendum varius cursus. Cras interdum, velit at condimentum cursus, orci sapien ultrices nisl, eu blandit sem diam eu lectus. Mauris nec ultrices nisl, non ultrices lorem.
       </p>
@@ -63,7 +73,7 @@
     </main>
 
     <footer>
-      <h3>Strangelyng Home Page</h3>
+      <h3>Strangelyng Art Page</h3>
     </footer>
   </body>
 </html>

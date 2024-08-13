@@ -1,7 +1,85 @@
+/* DARK THEME AND LIGHT THEME VARIABLES */
+/* ------------------------------------ */
+:root {
+  /* Light mode */
+  --light-text: black;
+  --light-link: initial;
+  --light-bg: #ededed;
+  --light-body: #f6f7f8;
+  --light-theme: #fcfcfc;
+  --light-border: hotpink;
+  --light-switch-hover-color: white;
+  --light-switch-hover-glow: 0 0 5px black;
+  --light-switch-hover-bg: inherit;
+
+  /* Dark mode */
+  --dark-text: #dadada;
+  --dark-link: #2156e2;
+  --dark-bg: #121212;
+  --dark-body: #152028;
+  --dark-theme: #191c20;
+  --dark-border: darkblue;
+  --dark-switch-hover-color: yellow;
+  --dark-switch-hover-glow: 0 0 5px yellow;
+  --dark-switch-hover-bg: inherit;
+}
+
+html {
+  --text-color: var(--light-text);
+  --link-color: var(--light-link);
+  --bg-color: var(--light-bg);
+  --body-color: var(--light-body);
+  --theme-color: var(--light-theme);
+  --border-color: var(--light-border);
+  --switch-hover-color: var(--light-switch-hover-color);
+  --switch-hover-glow: var(--light-switch-hover-glow);
+  --switch-hover-bg: var(--light-switch-hover-bg);
+}
+
+html.dark-theme {
+  --text-color: var(--dark-text);
+  --link-color: var(--dark-link);
+  --bg-color: var(--dark-bg);
+  --body-color: var(--dark-body);
+  --theme-color: var(--dark-theme);
+  --border-color: var(--dark-border);
+  --switch-hover-color: var(--dark-switch-hover-color);
+  --switch-hover-glow: var(--dark-switch-hover-glow);
+  --switch-hover-bg: var(--dark-switch-hover-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --text-color: var(--dark-text);
+    --link-color: var(--dark-link);
+    --bg-color: var(--dark-bg);
+    --body-color: var(--dark-body);
+    --theme-color: var(--dark-theme);
+    --border-color: var(--dark-border);
+    --switch-hover-color: var(--dark-switch-hover-color);
+    --switch-hover-glow: var(--dark-switch-hover-glow);
+    --switch-hover-bg: var(--dark-switch-hover-bg);
+  }
+
+  html.light-theme {
+    --text-color: var(--light-text);
+    --link-color: var(--light-link);
+    --bg-color: var(--light-bg);
+    --body-color: var(--light-body);
+    --theme-color: var(--light-theme);
+    --border-color: var(--light-border);
+    --switch-hover-color: var(--light-switch-hover-color);
+    --switch-hover-glow: var(--light-switch-hover-glow);
+    --switch-hover-bg: var(--light-switch-hover-bg);
+  }
+}
+
 html {
   margin: auto;
-  background-color: #f6f7f8;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  font-size: 100%;
+  color: var(--text-color);
   height: 100%;
 }
 
@@ -9,32 +87,75 @@ body {
   max-width: 900px;
   min-height: 100%;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: var(--body-color);
   position: relative;
   border-width: 0px 4px;
   border-style: solid;
-  border-color: hotpink;
+  border-color: var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+#header-wrapper {
+  border-bottom: 4px solid var(--border-color);
+  background-color: var(--theme-color);
+  padding: 20px;
 }
 
 header {
-  background-color:#fcfcfc;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 4px solid hotpink;
+  font-size: clamp(0.75rem, -0.078rem + 2.3vw, 2rem);
 }
 
 header h1 {
+  text-align: center;
   padding: 0.75em;
   margin: 0;
 }
 
-nav a {
+nav {
+  width: 100%;
+  display: flex;
+  border-bottom: 4px solid var(--border-color);
+}
+
+nav a, nav p {
   display: block;
-  padding: 15px 30px;
-  background-color: #fcfcfc;
-  text-align: center;
+  width: 25%; /* number of nav links * width should equal 100% */
   float: right;
+  padding: 15px 30px;
+  background-color: var(--theme-color);
   font-weight: bold;
+  text-align: center;
+  overflow-wrap: normal;
+}
+
+nav a {
+  color: var(--link-color);
+}
+
+nav p {
+  color: var(--text-color);
+}
+
+#theme-switch {
+  float: right;
+  background-color: var(--theme-color);
+  color: var(--link-color);
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+#theme-switch::after {
+  content: '💡';
+  padding-left: 5px;
+}
+
+#theme-switch:hover {
+  color: var(--switch-hover-color);
+  text-shadow: var(--switch-hover-glow);
+  background-color: var(--switch-hover-bg);
 }
 
 a:hover {
@@ -43,6 +164,7 @@ a:hover {
 
 main {
   padding: 20px;
+  flex: 1 0 auto;
 }
 
 h2 {
@@ -57,7 +179,7 @@ h3, h4, h5, h6 {
   margin: 20px 0px 0px;
 }
 
-p {
+main p {
   padding: 10px 0px;
   text-indent: 1.5em;
 }
@@ -71,37 +193,23 @@ h6 + p {
   padding-top: 5px;
 }
 
+img {
+  margin: 3% 5%;
+  box-shadow: 0 0 5px #121212;
+  max-width: 90%;
+}
+
 footer {
-  background-color: #fcfcfc;
+  background-color: var(--theme-color);
   position: relative;
   bottom: 0px;
   width: 100%;
   text-align: center;
-  border-top: 4px solid hotpink;
+  border-top: 4px solid var(--border-color);
+  flex-shrink: 0;
 }
 
 footer h3 {
   margin: 0;
   padding: 1.5em;
-}
-
-/* @media query Dark Mode */
-/* ---------------------- */
-@media (prefers-color-scheme: dark) {
-  html { 
-    background-color: #292c34;
-  }
-  body {
-    background-color: #1d2127;
-    color: #dadada;
-  }
-  header, footer, nav a {
-    background-color: #191c20;
-  }
-  nav a {
-    color: #2156e2;
-  }
-  body, header, footer {
-    border-color: darkblue;
-  }
 }
